@@ -1,0 +1,32 @@
+//POST requests
+
+//able to post data to an api
+
+I can send data to my api, in order to add a new burger object
+
+const data = { username: 'example' }
+
+fetch('https://xxx', {
+    method: 'POST',
+    headers: {
+        'Content-Type: 'application/json',
+    },
+    body: JSON.stringify(data),
+})
+.then(response => response.json())
+.then(data => {
+    console.log('Success:', data)
+})
+.catch((error) => {
+    console.error('Error', error)
+})
+
+
+//This time we pass 2 arguments into fetch: the url and also an object 
+// with the method of 'POST' we are telling our fetch api we are posting this data to the url (i don't wanna GET it)
+and we are passing an object which has the method of 'POST' , the header and the body
+the body is what we tell it to be in the const data variable
+
+.then we are catching the response and the data with 'success' message.
+
+or if it has been an error, we can catch the error and we're able to see that in our console log

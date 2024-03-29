@@ -1,0 +1,57 @@
+boby {
+    background-color: lightsalmon;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+
+.container-flo {
+    width: 150px;
+    height: 150px;
+    background-color: lightcoral;
+    margin-right: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-flor {
+    width: 130px;
+    height: 40px;
+    background-color: orange;
+    border-radius: 25px;
+}
+
+.form-flor::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 130px;
+    height: 40px;
+    transform: rotate(60deg);
+    background-color: orange;
+    border-radius: 25px;
+    
+}
+
+.form-flor::after {
+    content:"";
+    display: block;
+    width: 130px;
+    height: 40px;
+    background-color: orange;
+    border-radius: 25px;
+    transform: rotate(-60deg)
+}

@@ -1,0 +1,99 @@
+BREATH-FIRST SEARCH:
+allows you to find the shortest path between two things
+and try to find the shortest path from a to b
+
+We need to model the problem as a graph (a set of connections)
+And solve the problem using depth-first search
+
+This set of connections is what it means by graph model,
+is a neat way of modelling how things are connected to each other, using nodes and edges. A node can be connected to many other nodes, these are called neighbours. With this structure we can illustrate many things, like a friendship circle.
+
+how breadth-first search helps us to find our shortest path from a to b?
+
+Unlike binary search which halves and halves your search until you find your result, the breadth-first search runs on graphs
+
+my graphs expands, this means that i am slowly going through my friends groups of friends until i find the queen and my search is over.
+
+there are 2 questions breadth first search can answer for us:
+1.is there a path from node a to b?   i.e is the queen in your network?
+2.what is the shortest path from node a to node b?
+i.e what's the least amount of steps to get to the couch
+i.e find our closest connection for the queen
+
+first checks our first degree connections for the queen, then our second and so on until we find her.
+
+If you look in a list you will see the order of which we are searching,(is called the queue), we go through each friend connection in order. 
+With a queue you can't access random elements in a queue.
+There's only two operations you can use in a queue:  enqueue and dequeue.
+If you add an item to your list, the first item you added will be dequeued before the second item be queued.
+This structure is called fifo (first in, first out)
+The structure is opposed is called a stack which is lifo (last in, first out)
+
+for explain relationship data:
+i would use hash table 
+in python:
+graph = {}
+graph['me']=['mum','dog','teacher']
+
+graph['me'] will throw back an array of all my facebook friends or neighboring nodes.
+
+how about my friends of friends extended graph?
+extended graph look like this: 
+   (hash tables have no ordering)
+graph={}
+graph['me']=['mum','teacher']
+graph['mum']=['angela','leia']
+graph['teacher']=['jimbo','ali']
+graph['jimbo']=[]
+graph['ali']=[]
+graph['angela']=[]
+graph['leia']=[]
+
+arrows pointing to and pointing back0<=>0 or not arrows pointing back 0->0,
+this is called directed graph. both nodes are each other's neighbors.
+Opposed to undirected graph 0-0
+
+
+
+we check the queue containing the people we gonna check for if they know the queen
+We pop off the first onne we check if my dog is the queen if not add all neighbors to the queue
+
+  dog -- is queen? -- yes! -- done
+		   -- no! -- add all neighbors to the queue
+
+if not, we add all the neighbors to my queue
+if there are shared friends ex: leia (added twice) we added just once
+we need to mark leia as searched so we don't search her again.
+(If we don't do this  we also end up with an infinite loop)
+(i.e:  andre is my neighbor so i check andre and i'm his neighbor so he checks on me, and so on)
+This is why we need to keep a list(array) of people we have searched already
+
+if that person hasn't been search then we check if that person is the queen,
+and if there is not, we added to the searched already list(array)
+
+how long does it take to find the queen?
+we can calculate it.
+so if we go to edge to edge , my runtimes would be 0(nomb of edges)
+you also need to keep a cue of the amount of people you have searched, adding one person to the queue take 0(1) runtimes
+
+whatever amount of people there is it will take 0(numb of people)
+this means that breadth first search takes 0(numb of people + numb of edges)
+or O(v+e)  v= verticies   e= edges
+
+//===breath first search in a nutshell:
+-if there is a path from A to B
+-will find the shortest path
+-it can have directed graphs
+-it can have undirected graphs
+-queues(fifo) first in first out 
+-needs to store checked elements
+//===
+
+here a part of the final code of what this would look like
+
+def search(name):
+    search_queue=deque()
+    search_queue+=graph[name]
+    search_queue+=graph[name]
+    searched=[]
+//.........

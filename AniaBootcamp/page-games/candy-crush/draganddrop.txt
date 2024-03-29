@@ -1,0 +1,35 @@
+A typical drag operation begins when a user selects a draggable element, continues when the user drags the element to a droppable element, and then ends when the user releases the dragged element.
+During the operations, several event types are fired, and some events might fire many times
+Making an element draggable requires adding the draggable attribute and the dragstart event handler.
+
+<script>
+  function dragstartHandler(ev) {
+    // Add the target element's id to the data transfer object
+    ev.dataTransfer.setData("text/plain", ev.target.id);
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    // Get the element by id
+    const element = document.getElementById("p1");
+    // Add the ondragstart event listener
+    element.addEventListener("dragstart", dragstartHandler);
+  });
+</script>
+
+<p id="p1" draggable="true">This element is draggable.</p>
+
+
+drag event type:
+drag
+dragstart
+dragover fires when a dragged item is being dragged over a valid drop target, every few hundred milliseconds
+dragleave fires when a dragged item leaves a    valid drop target.
+dragenter fires when a dragged item enters a valid drop target.
+dragend
+drop
+
+e.preventDefault() to prevent additional event processing for this event(such as touch events or pointer events)
+
+advanced:
+At the end of a drag operation , the dragend event fires at the source element the element that was the target of the drag start.
+The drageend event handler can check the value of the dropEffect property to determine if the drag operation succeeded or not.

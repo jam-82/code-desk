@@ -1,0 +1,36 @@
+
+body {
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    
+}
+
+.container {
+    background-color: orange;
+    border: none;
+    width: 360px;
+    height: 80px;
+    border-radius: 200px;
+    text-align: center;
+    line-height: 2.6;
+    color: white;
+    font-size: 1.8rem;
+}
+
+button {
+    background-color: orange;   
+    color: #fff;
+    padding: 6px;
+    margin: 30px 140px;
+    border: none;
+    border-radius: 20px;
+    width: 100px;
+    font-size: 0.7rem;
+}
+button:hover {
+    background-color: lightseagreen;
+    box-shadow: inset 2px 2px -2px 3px rgba(155,22,50, 0.8);
+    transition: all 0.8s ease-in-out
+}

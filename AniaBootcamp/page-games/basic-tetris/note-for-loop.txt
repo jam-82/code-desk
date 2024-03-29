@@ -1,0 +1,11 @@
+var shapes = ['circle', 'square', 'triangle']
+
+for (let i = 0; i < shapes.length; i++) {
+    console.log(shapes[i])
+}
+
+
+//we are doing 3 things:
+1. setting the variable before the loop starts let i = 0
+2. defining the condition for the loop to run i must be less than 3
+3. incrementing the value by one using the increment operator we move into the next item in our array to loop over

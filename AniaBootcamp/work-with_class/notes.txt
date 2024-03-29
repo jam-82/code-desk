@@ -1,0 +1,6 @@
+//class
+
+classes are the templates for creating object
+they are special function composed by
+class expression, class declaration
+

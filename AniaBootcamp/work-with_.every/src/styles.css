@@ -1,0 +1,38 @@
+html {
+    margin-top: 80px;
+    border: 5px solid blue;
+}
+
+body {
+    margin: 50px;
+    background-color: rgb(153, 216, 153);
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+}
+
+* {
+    margin: 0;
+    padding: 15px;
+    border: 2px solid lightblue;
+
+}
+
+.container {
+    width: 400px;
+    height: 190px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    font-size: 28px;
+    align-items: center;
+    background-color: lightslategray;
+    border: 21px solid rgb(232, 146, 93);
+    border-radius: 42px 0 42px 0;
+    color: white;
+}
+
+
+

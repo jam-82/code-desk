@@ -1,0 +1,6 @@
+//smile-sad face
+//exercise from switch lesson--
+ania solution
+
+// Use everything we have learn, switch casees, keys...
+// we want to make the little guy face smile if we press arrow up and be sad if we press arrow down

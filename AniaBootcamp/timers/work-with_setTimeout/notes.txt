@@ -1,0 +1,3 @@
+//setTimeout()
+
+calls a function or evaluates an expression after a specify number of milliseconds has pass 

@@ -1,0 +1,51 @@
+
+
+body {
+    margin: 0;
+    background-color: orange;
+    height: 60vh;
+    border: 2px solid red;
+    border: 4px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 600px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+}
+
+.circle {
+    /* position: absolute; */
+    width: 160px;
+    height: 160px;
+    /* background-color: yellow; */
+    background-image: radial-gradient(orange 23%,lightBlue 44%,red 55%, lightgreen 65%);
+    /* border: 5px solid lightblue; */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+    font-size: 1.4rem;
+    font-weight:700
+}
+
+.red-circle {
+    
+    font-size: 33px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: red;
+    text-align: center;
+    line-height: 133px;
+}
+
+
+
+
+
+

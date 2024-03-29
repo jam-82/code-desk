@@ -1,0 +1,14 @@
+binary search
+
+run time for algoritms
+simple search: linear time   O(n) (one by one),
+simple search runs at what is known as O(n)
+
+binary search: log time    O(log n) 
+is a halving algoritm,
+is faster than simple search when the list is bigger and bigger,
+binary search runs at what is known as O(log n)
+
+algoritms are written in big 0 Notation
+
+research for more information:  on logaritm and on big O notation

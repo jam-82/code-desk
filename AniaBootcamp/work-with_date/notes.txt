@@ -1,0 +1,4 @@
+//Date
+
+the javascript date object represent a single moment in time in a plateform independent format. 
+day objects contain a number that essentially represent milliseconds since the 1st of january 1970 UTC

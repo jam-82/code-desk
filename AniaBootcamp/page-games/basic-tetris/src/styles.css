@@ -1,0 +1,60 @@
+.grid {
+    width: 200px; /*10x20*/
+    height: 400px;/*20x20*/
+    background-color: yellow;
+    display: flex;
+    flex-wrap: wrap;
+}
+/* the dimension grid with squares is 10 squares in row and 20 squares in a column */
+
+.grid div {
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.tetromino {
+    background-color: blue;
+}
+
+
+.mini-grid {
+    margin-left: 50px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: yellow;
+    border: 1px solid;
+}
+
+.mini-grid div {
+    height: 20px;
+    width: 20px;
+    border: 1px solid;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+}
+
+
+
+
+
+/* ========optional======== */
+
+/* .taken {
+} */
+
+h3 {
+    background-color: pink;
+}
+
+
+
+p {
+    background-color: orange;
+}

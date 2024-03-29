@@ -1,0 +1,22 @@
+
+body {
+    font-family: sans-serif;
+    background-color: sandybrown;
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div {
+    border:0;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+
+
+
+

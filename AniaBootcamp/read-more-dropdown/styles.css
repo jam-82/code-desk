@@ -1,0 +1,53 @@
+/* * {
+    border: solid red 1px;
+} */
+body {
+    background-color: lightblue
+}
+.card {
+    width: 400px;
+    margin: 10px;
+    background-color: white;
+    border: solid 4px green;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.1);
+}
+.placeholder-for-image {
+    width: 400px;
+    height: 250px;
+    background-color: salmon;
+}
+
+.info {
+    background: rgb(143, 45, 62);
+}
+
+.description {
+    background: lightseagreen;
+    margin: 13px
+}
+
+.expandMoreContent {
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+    position: relative;
+}
+
+.expandMoreContent.expand-active {
+    height: auto;
+    transition: height 0.5s ease-in-out;
+    background-color: white;
+}
+
+.expandMoreHolder {
+    padding: 10px 0;
+    text-align: center;
+    border: 8px inset purple;
+    
+}
+
+.btn-expand-more {
+    cursor: pointer;
+    border: 3px solid rgba(0, 0, 0, 0.4);
+    display: inline-block;
+}

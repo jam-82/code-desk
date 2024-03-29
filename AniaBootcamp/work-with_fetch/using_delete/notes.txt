@@ -1,0 +1,2 @@
+//DELETE request
+// Let's say we want to delete the last object (the Chichis Burger object)

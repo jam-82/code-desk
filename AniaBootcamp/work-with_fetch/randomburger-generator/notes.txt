@@ -1,0 +1,13 @@
+//FETCH
+provide a javascript interface for accessing and manipulating part of the http pipeline, such as request and response
+
+//we are gonna be using a burger api in  order to randomly generate burger name if we click the button
+
+we're gonna have a GET request to get all the burgers
+and we can do this with fetch()
+//syntaxe:
+fetch('http://example.com/movies.json')
+    .then(response => response.json())
+    .then(data => console.log(data))
+
+//only once we have the data we can use what we have

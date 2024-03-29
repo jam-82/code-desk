@@ -1,0 +1,16 @@
+body {
+    background-color: lightsalmon;
+}
+
+.date {
+    width: 300px;
+    height: 100px;
+    background-color: blueviolet;
+    margin: 0 45px;
+    margin-top: 85px;
+    border-radius: 50px;
+    font-size: 70px;
+    color: white;
+    text-align: center;
+
+}

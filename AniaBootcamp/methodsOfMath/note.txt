@@ -1,0 +1,13 @@
+
+with method that work on the Math built-in-object
+
+//Math.floor() - rounds numbers down to the nearest full integer
+
+in this example of 2 index array (starting by 0)
+we can round up, we need to round down in this situation 
+This is why Math.floor() works
+
+
+// Math.ceil() - rounds up
+// Math.round() - rounds to nearest integer
+

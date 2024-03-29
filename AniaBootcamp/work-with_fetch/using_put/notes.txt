@@ -1,0 +1,19 @@
+//PUT
+// Allows you to edit an object
+we can use it to update any ressource that we have,
+it's a commun http method for retrieving and sending data to a server
+
+fetch('', {
+    method: 'PUT',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+})
+  .then((response) => response.json())
+  .then((data) => {
+    console.log('success:', data)
+})
+  .catch((error) => {
+    console.error('Error:', error)
+    })

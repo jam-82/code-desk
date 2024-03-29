@@ -1,0 +1,7 @@
+//.sort()
+
+sort the element of an array in place and returns a sorted array.
+The default sort order it gonna be ascending base on the UFT16 code unit values
+that is gonna sort it alphabetically
+
+

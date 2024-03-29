@@ -1,0 +1,45 @@
+querySelector()
+
+The document method querySelector returns the first element within the document that match the specify selector
+
+A nodeList does not to be confuse with an array.
+
+
+querySelector
+The document method querySelectorAll() returns a static(not live) NodeList representing a list of the document's elements that match the specified group of selectors.
+
+
+.getElementByClassName()
+
+.getElementByTagName()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+events:
+
+mouseover is fired at an Element when a pointing device(mouse or pad) is used to move the cursor onto the element or one of its child elements.
+
+=======================
+
+
+if the script is in the <head>
+the html is no loaded before the javascript, and the javascript don't work
+
+In this case we need to make sure the html is  loaded before
+
+so in my javascript file i need to write all my code inside this:
+
+document.addEventListener('DOMContentLoaded',() => {
+
+})

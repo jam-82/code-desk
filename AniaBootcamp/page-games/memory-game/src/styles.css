@@ -1,0 +1,23 @@
+/* * {
+    margin: 0
+} */
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 380px;
+    /* height: 300px; */
+    border: solid black 1px;
+    margin: 0 auto;
+}
+
+h3 {
+    margin-left: 130px;
+}
+
+img {
+    /* display: inline-block; */
+    margin: 2px;
+    height: 130px;
+    width: 90px;
+}

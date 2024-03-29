@@ -1,0 +1,15 @@
+//keys
+
+  // if (e.keyCode === 37) {
+    //     console.log('pressed left')
+    // } else if (e.key === 'ArrowRight') {
+    //     console.log('pressed right')
+    // } else if (e.key === 'ArrowUp') {
+    //     console.log('pressed up')
+    // } else if (e.key === 'ArrowDown') {
+    //     console.log('pressed down')
+    // }
+
+//switch
+
+The switch statement evaluate an expression matching the expression value to a a case close and execute statement associated with that case

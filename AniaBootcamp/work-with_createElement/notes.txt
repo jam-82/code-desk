@@ -1,0 +1,3 @@
+// .createElement()
+the createElement() method when attached to the document create the HTML element specify by tag name.
+that's mean i can create elements in our javascript, just like we would create a div in the html

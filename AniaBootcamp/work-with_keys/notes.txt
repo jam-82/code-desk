@@ -1,0 +1,18 @@
+//keys
+
+you also can see the keyCode 
+(but near being deprecated)
+
+ArrowLeft:  37
+ArrowRight: 39
+ArrowUp: 38
+ArrowDown: 40
+
+function control(e) {
+    if (e.keyCode === 37) {
+        console.log('pressed left)
+    } else if (e.keyCode === 39) {
+        console.log('pressed right)
+    }
+    //.....
+}

@@ -1,0 +1,296 @@
+// tetris
+tetris is a simple grid-based game in which you as user have to navigate five tetraminos down the bottom of your grid.
+The aim of the game is to get the highest score by filling up rows on your grid in order for them to disappear and for you to gain points.
+You as the user can rotate your shapes and you also have insider knowledge by knowing which shape is coming up next thanks to a grid to the side of your grid
+
+
+//folder management
+remember to keep your index.html at the root of your folder, if you do not our browser will not be able to read this project
+
+document.addEventListener('DOMContentLoaded', () {}
+)
+the dom content loaded event fires when the initial HTML document has been completely loaded
+
+How is an id different to a class?
+ An id can be used only one time in a file, and a class can be used several times in a file
+
+
+what tag do we use to link the JavaScript file to the HTML file?
+ we use script tag with the file path 
+
+What does CSS stand for?
+ cascading style sheets
+
+What relative path did we give to find our StyleSheet?
+ <link rel="stylesheet" href="src/styles.css">
+
+What is an <h3> tag used for?
+ is used for a title third in importance
+
+//HTML=================================================================================
+we first need to plan exactly what we want our tetris game look like in term of shape:
+we are making a grid-based game I would suggest drawing this out first or using google sheet
+
+
+
+//
+//
+we use the dot .className to tell the CSS file that we want to find a class name?
+
+
+flex-wrap:wrap display the element in the container from the left to the right on top of each other. answer researched: it forces flex items onto one line and wrap onto multiple lines.
+
+We use flexbox for the red squares apear stacked in a line and then stack over each other as soon as they don't fit in the grid div
+
+
+by default div stack on each other no margin between them, 
+by default p, h1 stack on each other but have a margin
+
+to give a div a colour we use background-color: "thecolor";
+
+//
+//
+in javascript you can store values in variables, they are legal identifiers 
+//
+variables are two types of scope global scope and function scope, meaning they can be accessed inside our function
+
+//
+difference var et let
+let allow you to declare variables that are limited to the scope of a block statement, unlike var
+
+with let we have to be aware: exemple 
+in a function inside a function, be aware where we use the display console
+some value can be out of scope.
+with let you cannot access the variable inside a function when you are out of reach
+
+cannot redeclare const variables
+Assignment to constant variable
+
+recap:
+var - function + global scoped
+let - block scoped
+const - block scoped constant
+
+//.forEach(value, index, object)
+
+
+
+//
+//working with Array
+you don't need to store differents values in different variables.
+With arrays,
+you can loop through an array to display differents values.
+An array can hold many values under a single name variable and you can access the value by refering to an index number, 
+javascript array are zero index,means the first value starts at index 0 ,
+the last element is at the index equal to the value of the array's length property minus one
+
+var tetrominoes = [lTetromino, zTetromino...]
+
+1.what does Array.from() do?
+  Array.from() change an nodeList into an array
+2.An array hold many values under a single name - is this true?
+  yes an array hold many values under a single name
+3.I have an array of 5 items. what is the index number of the 5th item in my array?
+The index number of the 5th item is index number 4
+
+
+
+
+// setInterval(function, 1000)
+
+is an inbuilt method that allows us to invoke a function that we pass through it after x amount of time
+
+1000ms = 1s
+
+//.some()
+
+itemArray.some(false, true, false)
+
+with some() we are checking that the logic we write in the brackets is true for some of the items in our array, so basically if we ever get one true back we are good to go.
+
+the some method check if the statement is true for at least one of the items, if it is the whole statement is therefore true.
+
+the forEach() method is different because it applies a logic for each items in our array, the some() method check the logic we write in the bracket is true for at least one of the items of our array
+
+
+
+//
+//using modulus to define our place in the grid
+
+we need to write a set of rules to let our javascript know when any of our squares that make up our tetramino are in a certain indexed square
+I want to make sure that if the tetramino is in the square with index 10 i don't want it to move left anymore.
+
+
+// we know our grid has a width of 10 
+
+//we define what is a left edge
+const isAtLeftEdge = current.some(index =>(currentPosition + index) % width === 0) 
+
+if(!isAtLeftEdge) currentPosition -=1
+  
+  //
+  if(current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
+    currentPostion += 1
+    draw()
+  }
+ //means if some of the squares in our tetramino shape suddenly go into a space that contains a class of "taken" while traveling left, we wanna push our currentPosition back 1 space so it appears not to have moved.
+    // we want to do this for every index in our tetramino shape so use an arrow function to do that and pass through the current position and add every index as it gets passed through.
+    // then we add 1 to its currentPosition so that moves back to its original space in the array
+    // and finally we draw the tetromino
+
+//if some of the squares in our tetromino shape
+
+
+
+//
+//we  add the freeze function into our move down function so that it gets nvoked to check every second
+
+
+//
+//keycodes and events
+//keycodes
+//every single key on your keyboard has an assigned code to it that we can access through our javascript. We are going to use this to make our tetramino move left. If you press key code 37
+
+37 > left
+39 > right
+
+you also choose the keyboard you want
+
+//events
+we are also looking at passing through events into functions so that we can use them
+
+//first: we need to assign key codes to functions
+we write a function called control and add a document event listener to listen for any time we press a specific key on our keyboard we invoke the control function
+
+.addEventListener("event", function)
+
+//the event target method .addEventListener sets up a function
+that will called whenever the specifies event is delivered to the target. Common target are element, document and window
+
+document.addEventListener("keyup",control)
+
+//we can also do remove event listener to deactivate any listening happening
+
+document.removeEventListener("keyup", control)
+
+
+//function moveRight
+//move theh tetromino right, unless is at the edge or there is a blockage
+//we define what it means when some of the squares that make up our current tetromino are in certain indexes.
+
+//then if some of the squares that make up our tetramino are suddently in a square that contains the class of 'taken', we have to push them back a space in our array, visually making them appear like they haven't moved at all.
+
+
+//
+//choosing items from Arrays
+//the incremental operator is gonna help us access the next item in our tetramino's array.
+We are doing this as we need to access all four of each of our tetramino rotations on a click of a key code.
+//we are going to be doing this using the double plus.
+++ is an increment operator
+y = 5
+y++
+y = 6
+
+-- is a decremental operator
+x = 5
+x--
+x = 4
+
+//
+//Displaying the 'Next Up' Tetromino
+//build a mini grid to the right of our grid
+we are doing this so that we can display the upcoming shapes for our user
+
+
+//
+//
+function displayShape() {
+    displaySquares.forEach(square => {
+        square.classList.remove('tetramino')
+    })
+}
+
+using the displaySquares where i have collected all the divs in our mini-grid
+I am using forEach() to get each square and remove any trace of a tetramino class from it
+
+
+//in freeze() {......}
+//random = nextRandom
+nextRandom = Math.floor(Math.random() *theTetrominoes.length)
+
+right before we choose a random tetramino for our main grid we adding on more step
+
+what is happening here: the value of the nextRandom is being passed on to the random
+value so we choose a next randomly selected tetramino assign this value to nextRandom.
+Then let's back and display our displayShape() function
+
+//
+//
+//==Adding a start and pause game function
+//now what would be great is if we can get this shape to display as soon as our game starts
+//we start to hook up the start and pause button
+
+
+tips: console.log() each step to understand what is happening under the hood
+
+move the function moveDown() into an eventListener that is attached to our button that we have an id of start-button
+
+This means that everytime we press the start button we are gonna invoke the function moveDown() with its setInterval
+
+1. grab our start-button  in startBtn and attached it an eventListener
+
+let our timerId be null by leaving it blank
+
+
+
+//if the button is clicked and we have a timeId value (the value is not null) we want to pause the game, we do this by passing timerId through clearInterval()
+And setting the value to timerId = null
+
+
+//we now need to invoke the moveDown function that is on a timer that wrote previously from our code, so get rid of it unless it's in the start button eventListener
+
+(because we have the setInterval that starts tetramino moving down is invoke on the load of the browser)
+We want it to be invoked only if we press the start button.
+
+
+
+//
+//Splice()
+using splice() on an array can totally change its content.
+We can remove items from the array or remove them and remplace them with totally new ones.
+We are mutating the array
+
+//
+//
+//Splice(), concat() and appendChild()
+this time we're going to be focusing on what happens when the user manage to fill a whole row with tetramino squares
+//1-we need to remove the row from our grid or array.
+2-And increase score, 
+3-display the score in our browser
+4-add a new fresh row to our grid or array so the grid doesn't appear to shrink in size
+
+//the splice method adds and removes items to and from arrays, and returns removed items
+//concat method allows us to merge two arrays together
+//appendChild() is an inbuild javascript method that allows us to append elements to an existing element for example our grid
+
+//the for loop syntax
+for (let i=0; i<10; i++){}
+
+
+//we next define what we want our row to be this will be the i plus every square that makes up a row:
+const row = [i, i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8, i+9]
+
+
+//
+//Game over using some() and innerHTML
+ Game over is when you stack up all your tetrominoes so that they don't fit in the grid anymore
+
+ we make a game over function that says that if some of our current tetremino shape that is in play, if some of its indexes(items) at the current tetramino's current position contain  the class of 'taken', We call it a game over
+
+
+ //
+ //Assigning colors to our Tetrominos
+ we need to find each time we add and remove the classList of tetramino, so we can add this color on top of it.
+ The first intance i can see this in is in the draw function.
+ We pass through whatever value is currently random into our color array.
+ This mean if the random tetramino is currently the ltetromino, the color we will get back will be orange each times

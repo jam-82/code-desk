@@ -1,0 +1,12 @@
+//setInterval()
+
+calls a function or evaluate an expression at specified intervals, it will continue calling the function until the interval is cleared or the window is closed
+
+keep calling the function until we tell to stop or we close the window down
+
+//clearInterval()
+will stop the time running
+
+assign the setInterval to a variable timerId
+we can then use this Id , putting the timerId into clearInterval(---)  
+That will stop the interval from running

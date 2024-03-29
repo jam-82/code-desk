@@ -1,0 +1,15 @@
+body {
+    height: 100vh;
+    background-color: lightgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ball {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: lightcoral;
+    margin-right: 15px;
+}

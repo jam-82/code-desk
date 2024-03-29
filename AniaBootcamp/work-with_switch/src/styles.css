@@ -1,0 +1,70 @@
+
+body {
+    font-family: sans-serif;
+    background-color: lightseagreen;
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: yellow;
+}
+
+.eye-container {
+    position: absolute;
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid red; */
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color: yellow;
+}
+
+.eye {
+    width: 10px;
+    height: 20px;
+    background-color: black;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+
+.smile {
+    margin-top: 20px;
+    margin-left: 24px;
+    width: 45px;
+    height: 45px;
+    border: 5px solid black;
+    border-radius: 50%;
+}
+.sad {
+    margin-top: 65px;
+    margin-left: 28.5px;
+    width: 35px;
+    height: 15px;
+    border: 5px solid blue;
+    border-radius: 50%;
+}
+
+.block-tr {
+    position: absolute;
+    bottom: -30px;
+    left: 0px;
+    height: 13px;
+    width: 56px;
+    border: 2px solide blue;
+    background-color: yellow;
+    border-radius: 5px;
+    /* border: 2px solid black; */
+    border-radius: 20px;
+}
+

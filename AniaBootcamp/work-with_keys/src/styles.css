@@ -1,0 +1,15 @@
+
+body {
+    font-family: sans-serif;
+    background-color: lightgreen;
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: blueviolet;
+}

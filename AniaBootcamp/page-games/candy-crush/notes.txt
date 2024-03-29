@@ -1,0 +1,165 @@
+//
+1.create a board, randomly generate candies all over the board
+2.switch out colors of candies on the board
+3.drag and drop candies
+4.check for matches
+5.check for valid matches = check that the row of candies doesn't go off into the next row
+6.move all the candies down if you get a match
+7.generate new candies
+
+
+
+we will use inbuilt javascript functions such as: every, some, forEach, includes, setAttribute, ...
+
+//the grid
+I predecide that my grid to be made up of 8 by 8 squares 
+70 pixels squares, so 70 x 8 =  560px
+
+To make appear the div staked over each other row by row, 
+so we use   display: flex;   flex-wrap: wrap
+
+style future squares
+
+//
+Now in javascript file let's create some squares.
+
+//
+Each time we create a div and add it to the grid, we also want to store it in an array
+(const squares = []) for us to work with.
+
+//
+after the square has been created, we also want to give it a random candy color
+Once we have a random number we want to pass that through our candy colors array to get a color and assign it to the square.
+
+What we are written is that each time we create a square we are assigning it a random color from our array
+when we refresh the browser each time the colors are coming up randomly
+
+//
+Now each time i create a square I also want to make it draggable, this is that we can drag candies into different locations around our grid 
+
+//Using setAttribute I add draggable and make it true
+
+//give an id to each square
+this is so that when we move a square or drag one you know exactly which one in our grid we are moving
+as we are looping over with an i so now each time we loop over this  we're gonna give a number from 0 to 63
+
+
+//
+//
+//the draggable feature
+to drag the candies i will use event listeners that listen each stage of dragging, each stage of dragging consists of five events (this allow us to add styling and times each of the five stages)
+
+Once we have all the event listeners attached to each square on our grid, we need to write functions for what happens when they 're triggered 
+
+//
+//the dragStart functions
+I want to say the color we were decided to pick up and drag, let's store this in colorBeingDragged
+
+
+//dragEnd
+in candycrush when you select a candy to put into an another location you actually first swap it out with another candy in that location, we can do this in javascript we just need to store another candy color
+Let's do that in the drag drop function, if i store an element in here i want to store the original color in that square
+
+when we have the colors stored to replace them in teh correct squares we need to rely on the squares IDs that we set, I call this squareIdBeingDragged in our dragStart function and assign it  this squares ID, we need to make sure this is a number so using parseInt() method
+
+In the dragDrop function is where we assign the ID
+Passing through the ID of the squareBeingDragged into the squares array i want to add this squares color, this will give the original squareBeingDragged this color after we have dropped in a new color
+
+If I drag a square and let it go it goes back , now if drag a square and
+when we drop and drop it in an other square it doesn't get dropped, this is because there are 5 stages that we need to account for. Let's skip over the drag over and drag enter for now
+I do this using e.preventDefault(), so using an e for event we pass through an event into the function and using prevent default we prevent it from doing it default action
+
+Now when we drag a square and drop it into a new one, we change the original square into a colorBeingReplaced. However the square we are dropping into stays the same color let's fix that.
+In the drag drop function we need to make the color of the square change into the color being dragged.
+In candy crush we can switch 2 candies however these 2 candies need to be directly in a square above, below, to the left or to the right of our current candy.
+We need to define what is a valid move
+Let's first get an array(stored in validMoves) of all of our moves for any square being dragged
+
+Let's define a valid move using an inbuild javascript method called includes()
+let validMove = validMoves.includes(squareIdBeingReplaced)
+means if the number passed through(the squareIdBeingReplaced) is included in our valueMoves array, this statement is true and we store the boolean of true for the validMove variable.
+Now using if statement: 
+if the ID of my squares being replaced exists as we want to make sure that this is only going to happen if my square is being dropped in another square and not if it's going off the grid && if this move is valid we execute the block of code.
+if they are both true, we clear the value of squareBeingReplaced = nul  , ready for a fresh start.
+if however there is a square that the drag square can be dropped to but it's not a valid move indicated by the bang  !validMove , so in other words it's a square that is too far, we execute another block of code : we can't go here so want to return the squareBeingReplaced with original spot by simply giving it back it color and we do the same for the original square[squareIdBeingDragged]
+
+if none of this statement are true so the square we are dragging has nowhere to go and is outside our grid, we simply add the colorBeingDragged back to its original space.
+
+//
+//
+//Checking for matches
+//in candycrush if you get a matching row or a column of 3 4 5 , three things happen:
+1. the candies disappear
+2. or the candies in the grid move down into free space and we gain points
+
+In our checkRowForThree function, we need to know how many squares we need to loop over exactly, this is because if you think about it  our row is compiled of three squares. Using math we figure out that the last square we could possibly loop over is 61 so that the loop would check 61, 62, 63 for a match of three colors
+
+now let's define our rowOfThree
+if we used indexes to draw our row it would look like this   let rowOfThree = [i, i+1, 1+2]
+Each time we loop over this we are swapping out the i for a number from 0 to 61
+Each time we loop over we also want to grab the color the first square is and assign it to the decidedColor
+Let's define what a blank spaces is, as we need to account for this when we are looping. isBlank is true if the squares background color is empty so deeply equal to ''
+Now that we have these two things defined let's get to write our logic.
+So using if statement let's get the rowOfThree using a inbuilt method called every() , if every index in our rowOfThree is deeply equals the decidedColor so the color of our first square && is not a blank square we want to execute some code
+if we found a match we want to take the rowOfthree array and for every index in it we want to give it an empty backgroundColor.
+We also want to add a score of 3 points each time we find a row of three, let's add the let score as a global variable and set the score as zero to start.
+Now we invoke the function checkRowForThree
+
+Now we want to invoke this function constantly while we are playing the game (at the moment there's only get some vote once we start up the browser)
+meaning that if we get any matches from now on they will not being cleared.
+We can do this to that work correctly: using a setInterval()
+Get the window add the inbuilt method of setInterval to it and saying that any code in the function checkRowforThree() i want to invoke every 100 milliseconds.
+
+Do the same structure for the checkColumnForThree function adapting and changing the name for this specificity.
+
+(If you wanna take your game to the next level and for best practice , you can add a button to activate this setInterval and also add some pause and stop functionality)
+
+the edge case when a row starts at the left or right end edge or half of its body is in the right end  edge:
+it will appear to be broken in two, but still valid as we haven't told our javascript that this is not a valid move. We need to fix this. 
+
+As this can only happen for rows let's go back to our checkRowForThree function. Let's define what is a valid move, let's get an array of all the indexes that are not valid, every indexes I do not want my row of three to start at. 
+Now let's use the includes inbuilt javascript method
+so if this number is included in the array not valid we want to skip it.   if (notValid.includes(i)) continue
+
+We copy what we done for rows and columns of three and do the same but checking for four this time.
+
+In window.setInterval()
+I wanna check for four first then for three, as we wanna to get rid of the big ones first.
+
+//
+//
+//Let's focus now on how to get the candies to move  down if some have been cleared.
+And also how to get new candies to generate.
+
+We need to write a function that will move all our candies down if a certain condition is met
+
+We create function moveDown inside we use a for loop to check all our squares up to square 55 (the firsts seven rows).
+we use an if statement
+ I gonna do this as I want to check the squares below each of the indexes for an empty square. And replace empty square by square directly above in the grid
+
+
+//fill with color
+I define the array of the indexes of the first row.
+  const firstRow = [0,1,2,3,4,5,6,7]
+
+if isFirstRow is true 
+(means firstRow indexes are included in the index i where we are passing through)
+and that they are empty squares, we want to fill it with random colored ones and keep doing this until the first row is not empty anymore 
+
+The randomColor is techniquely a number from the candyColors array.(so a number form 0 to 5)
+Now we need to pass this number through our array to get a string of a color name, we then assign it to our square and the first row
+  squares[i].style.backgroundImage = candyColors[randomColor]
+
+//display the score
+<div class="score-board">
+        <h3>Score</h3>
+        <h1 id="score">0</h1>
+    </div>
+
+const displayScore = document.querySelector('#score)
+let score = 0
+
+in the functions checkRowFor.. or checkColumnFor.. every time we add a score 
+
+score += 3  (ou  4)
+displayScore.innerHTML = score

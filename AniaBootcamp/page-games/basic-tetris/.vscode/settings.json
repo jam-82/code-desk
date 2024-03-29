@@ -1,0 +1,7 @@
+{
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingQuotes": "always",
+    "editor.colorDecoratorsActivatedOn": "click",
+    "workbench.tree.renderIndentGuides": "always",
+    "editor.tabCompletion": "on"
+}

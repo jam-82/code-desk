@@ -1,0 +1,34 @@
+// ====variables
+  // example with let 
+  // (try to change to var and see the difference)
+ 
+//   let y = 1;
+//  function findY() {
+//         {
+//            let y = 2; 
+//           }
+//           console.log(y)
+//         }
+        
+//         // findX()
+//         console.log(y)
+
+//=================================
+
+// function example with array[index]
+ //   let name = ['Ania', 'Kubow']
+
+  // function showAlert() {
+  //   console.log(name[0] +" "+ name[1] + ', You have been alerted!')
+  // }
+
+  // showAlert()
+
+  //===============================
+  
+  // use forEach()
+//   let names = ['Ania','Dave','Hannah','Bob']
+
+// names.forEach(name => {
+//   console.log(name + ' is the best!')
+// })
